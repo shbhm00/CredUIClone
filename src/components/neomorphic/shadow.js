@@ -22,7 +22,7 @@ export default function Shadow(
             styles.inner,
             {
               width: width || 40 / 2,
-              height: height / 1.5 || 40 / 2,
+              height: height || 40 / 2,
               borderRadius: height / 2 || 40 / 2,
             },
             style,

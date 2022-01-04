@@ -18,14 +18,21 @@ const ScreenHeight = Dimensions.get('window').height;
 export default function home({navigation}) {
   const [check, setCheck] = useState(Unchecked);
   const [activeText, setActiveText] = useState('#F9D3B466');
+  const [buttonEnable, setButtonEnable] = useState(true);
+  const [mobileNumber, setMobileNumber] = useState('');
   const checkbox = () => {
     if (check == Unchecked) {
       setCheck(Checked);
       setActiveText('#F9D3B4');
+      setButtonEnable(false);
     } else {
       setCheck(Unchecked);
       setActiveText('#F9D3B466');
+      setButtonEnable(true);
     }
+  };
+  const changetext = text => {
+    setMobileNumber(text);
   };
   return (
     <SafeAreaView
@@ -46,6 +53,8 @@ export default function home({navigation}) {
             style={styles.textInput}
             maxLength={10}
             autoFocus
+            keyboardType="numeric"
+            onChangeText={text => changetext(text)}
           />
         </View>
         <View style={styles.bottomWrapper}>
@@ -61,18 +70,23 @@ export default function home({navigation}) {
             accepeted credit score threshold. it will not impack your credit
             score.
           </Text>
-          <InnerShadow
-            height={90}
-            width={208}
-            style={styles.shadow1}
-            topColor={'#15181b'}
-            bottomColor={'#293033'}
-            gradientFirstColor={'#1c2023'}
-            gradientSecondColor={'#21272a'}>
-            <Text style={{color: activeText, fontSize: 16, fontWeight: '500'}}>
-              Agree &amp; continue
-            </Text>
-          </InnerShadow>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('OTP', mobileNumber)}
+            disabled={buttonEnable}>
+            <InnerShadow
+              height={90}
+              width={208}
+              style={styles.shadow1}
+              topColor={'#15181b'}
+              bottomColor={'#293033'}
+              gradientFirstColor={'#1c2023'}
+              gradientSecondColor={'#21272a'}>
+              <Text
+                style={{color: activeText, fontSize: 16, fontWeight: '500'}}>
+                Agree &amp; continue
+              </Text>
+            </InnerShadow>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
