@@ -12,8 +12,6 @@ import {
 import InnerShadow from '../components/neomorphic/innerShadow';
 import Checked from '../assets/checked.png';
 import Unchecked from '../assets/Checkbox.png';
-const ScreenWidth = Dimensions.get('window').width;
-const ScreenHeight = Dimensions.get('window').height;
 
 export default function home({navigation}) {
   const [check, setCheck] = useState(Unchecked);

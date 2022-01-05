@@ -39,6 +39,8 @@
 		1E3B63F0DAE62D0EEA01F685 /* Pods-CredClone-CredCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredClone-CredCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-CredClone-CredCloneTests/Pods-CredClone-CredCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E60E8505001DEC327EECF94 /* Pods-CredClone-CredCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredClone-CredCloneTests.release.xcconfig"; path = "Target Support Files/Pods-CredClone-CredCloneTests/Pods-CredClone-CredCloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CredClone/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84C4FD852784A9F300F46E61 /* liblottie-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "liblottie-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C4FD872784A9F900F46E61 /* liblottie-react-native.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "liblottie-react-native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9466DE2F84ED3C0EA114ADD6 /* libPods-CredClone-CredCloneTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CredClone-CredCloneTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58526DF571CBCC3DA931BA1 /* Pods-CredClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredClone.release.xcconfig"; path = "Target Support Files/Pods-CredClone/Pods-CredClone.release.xcconfig"; sourceTree = "<group>"; };
 		CEB4426CF28EE5D4692FF6E6 /* Pods-CredClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CredClone.debug.xcconfig"; path = "Target Support Files/Pods-CredClone/Pods-CredClone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84C4FD872784A9F900F46E61 /* liblottie-react-native.a */,
+				84C4FD852784A9F300F46E61 /* liblottie-ios.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				F0FA593B0B0E9B0961AB9041 /* libPods-CredClone.a */,
 				9466DE2F84ED3C0EA114ADD6 /* libPods-CredClone-CredCloneTests.a */,
@@ -114,7 +118,6 @@
 				1E3B63F0DAE62D0EEA01F685 /* Pods-CredClone-CredCloneTests.debug.xcconfig */,
 				4E60E8505001DEC327EECF94 /* Pods-CredClone-CredCloneTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

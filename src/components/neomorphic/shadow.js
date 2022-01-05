@@ -1,19 +1,13 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-const ScreenWidth = Dimensions.get('window').width;
-const tp = '#2d2b2b';
-const bm = '#3b3939';
-export default function Shadow(
-  {height, width, children, style, topColor, bottomColor},
-  props,
-) {
+import {View, StyleSheet} from 'react-native';
+export default function Shadow({
+  height,
+  width,
+  children,
+  style,
+  topColor,
+  bottomColor,
+}) {
   return (
     <View style={[styles.topShadow, {shadowColor: topColor}]}>
       <View style={[styles.bottomShodow, {shadowColor: bottomColor}]}>
@@ -46,7 +40,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 1,
     shadowRadius: 10,
-    // shadowColor: '#2d2b2b',
   },
   bottomShodow: {
     shadowOffset: {
@@ -55,7 +48,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 1,
     shadowRadius: 10,
-    // shadowColor: '#3b3939',
   },
   linearGradient: {
     borderRadius: 60,

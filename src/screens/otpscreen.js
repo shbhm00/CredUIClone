@@ -50,7 +50,7 @@ export default function home({navigation, route}) {
             placeholder="OTP"
             placeholderTextColor="#343739"
             style={styles.textInput}
-            maxLength={41}
+            maxLength={4}
             autoFocus
             keyboardType="numeric"
             onChangeText={text => onChangeText(text)}

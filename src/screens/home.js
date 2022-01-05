@@ -41,7 +41,7 @@ export default function home({navigation}) {
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Onboarding')}>
             <InnerShadow
-              height={100}
+              height={80}
               width={ScreenWidth - 40}
               style={styles.shadow1}
               topColor={'#15181b'}
@@ -49,7 +49,7 @@ export default function home({navigation}) {
               gradientFirstColor={'#1c2023'}
               gradientSecondColor={'#21272a'}>
               <Shadow
-                height={80}
+                height={60}
                 width={ScreenWidth - 50}
                 style={styles.shadow}
                 topColor={'#15181b'}

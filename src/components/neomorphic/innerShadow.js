@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  TouchableOpacity,
-} from 'react-native';
+import {View, StyleSheet, Dimensions} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 const ScreenWidth = Dimensions.get('window').width;
 export default function Shadow(
