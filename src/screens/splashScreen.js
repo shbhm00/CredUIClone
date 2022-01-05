@@ -5,7 +5,7 @@ export default function splashScreen({navigation}) {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('HomeScreen');
-    }, 3000);
+    }, 2200);
   });
   return (
     <View

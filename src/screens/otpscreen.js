@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import InnerShadow from '../components/neomorphic/innerShadow';
 import Shadow from '../components/neomorphic/shadow';
+// import LottieView from 'lottie-react-native';
 // import Unchecked from '../assets/Checkbox.png';
 // const ScreenWidth = Dimensions.get('window').width;
 // const ScreenHeight = Dimensions.get('window').height;
@@ -59,7 +60,7 @@ export default function home({navigation, route}) {
             didn't receive OTP? <Text>Resend OTP</Text>
           </Text>
         </View>
-        <View style={styles.bottomWrapper}>
+        <View>
           <TouchableOpacity
             onPress={() => navigation.navigate('OTP')}
             disabled={buttonEnable}>
@@ -82,6 +83,22 @@ export default function home({navigation, route}) {
               </Text>
             </InnerShadow>
           </TouchableOpacity>
+          {/* <LottieView
+            source={require('../assets/lf30_editor_kihekhhv.json')}
+            autoPlay
+            loop
+            style={{borderWidth: 1}}
+          /> */}
+        </View>
+      </View>
+      <View style={styles.bottomWrapper}>
+        <Image source={require('../assets/Divider.png')} />
+        <View style={styles.bottomPara}>
+          <Text style={styles.paragraph}>
+            by clicking on continue, you are indicating that you have read and
+            agree to our <Text style={styles.spanText}>terms of use</Text> &amp;{' '}
+            <Text style={styles.spanText}>privacy policy</Text>
+          </Text>
         </View>
       </View>
     </SafeAreaView>
@@ -119,7 +136,7 @@ const styles = StyleSheet.create({
   mainWrapper: {
     paddingLeft: 24,
     paddingTop: 20,
-    flex: 1,
+    flex: 4.5,
   },
   detailsText: {
     fontSize: 16,
@@ -150,20 +167,21 @@ const styles = StyleSheet.create({
   textWrapper: {
     paddingTop: 30,
   },
-  //   bottomWrapper: {
-  //     flex: 1,
-  //   },
-  //   checkbox: {
-  //     marginVertical: 20,
-  //   },
-  //   paragraph: {
-  //     color: '#4B4E4F',
-  //     width: 340,
-  //     fontSize: 12,
-  //     lineHeight: 22,
-  //     marginTop: 5,
-  //   },
-  //   spanText: {
-  //     color: '#8C8E8F',
-  //   },
+  bottomWrapper: {
+    flex: 1,
+    paddingLeft: 24,
+  },
+  bottomPara: {
+    paddingTop: 30,
+  },
+  paragraph: {
+    color: '#4B4E4F',
+    width: 340,
+    fontSize: 12,
+    lineHeight: 22,
+    marginTop: 5,
+  },
+  spanText: {
+    color: '#8C8E8F',
+  },
 });

@@ -55,6 +55,7 @@ export default function home({navigation}) {
             onChangeText={text => changetext(text)}
           />
         </View>
+        <Image source={require('../assets/Divider.png')} />
         <View style={styles.bottomWrapper}>
           <TouchableOpacity onPress={checkbox}>
             <Image source={check} style={styles.checkbox} />
