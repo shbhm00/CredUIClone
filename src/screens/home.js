@@ -16,12 +16,14 @@ const ScreenHeight = Dimensions.get('window').height;
 export default function home({navigation}) {
   const spinValue = new Animated.Value(0);
 
-  Animated.timing(spinValue, {
-    toValue: 1,
-    duration: 3000,
-    easing: Easing.linear,
-    useNativeDriver: true,
-  }).start();
+  Animated.loop(
+    Animated.timing(spinValue, {
+      toValue: 1,
+      duration: 3000,
+      easing: Easing.linear,
+      useNativeDriver: true,
+    }),
+  ).start();
 
   const spin = spinValue.interpolate({
     inputRange: [0, 1],
@@ -68,7 +70,7 @@ export default function home({navigation}) {
               gradientFirstColor={'#1c2023'}
               gradientSecondColor={'#21272a'}>
               <Shadow
-                height={60}
+                height={50}
                 width={ScreenWidth - 50}
                 style={styles.shadow}
                 topColor={'#15181b'}

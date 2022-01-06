@@ -9,6 +9,7 @@ import {
   TextInput,
   SafeAreaView,
 } from 'react-native';
+import {useSelector} from 'react-redux';
 import InnerShadow from '../components/neomorphic/innerShadow';
 import Shadow from '../components/neomorphic/shadow';
 
@@ -19,6 +20,8 @@ export default function home({navigation, route}) {
       setButtonEnable(false);
     }
   };
+  const counter = useSelector(state => state);
+  //   console.log('counter', counter.authReducer.userDetails);
   return (
     <SafeAreaView
       style={{
@@ -40,7 +43,8 @@ export default function home({navigation, route}) {
           <Text style={styles.onboardingText}>we have sent you</Text>
           <Text style={styles.onboardingText}>an OTP</Text>
           <Text style={styles.detailsText}>
-            enter the 4 digit OTP sent on <Text>{route.params}</Text> to proceed
+            enter the 4 digit OTP sent on{' '}
+            <Text>{counter.authReducer.userDetails}</Text> to proceed
           </Text>
           <TextInput
             placeholder="OTP"

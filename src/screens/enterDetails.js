@@ -9,10 +9,11 @@ import {
   TextInput,
   SafeAreaView,
 } from 'react-native';
+import {useDispatch} from 'react-redux';
 import InnerShadow from '../components/neomorphic/innerShadow';
 import Checked from '../assets/checked.png';
 import Unchecked from '../assets/Checkbox.png';
-
+import {PhoneNumber} from '../redux/action/index';
 export default function home({navigation}) {
   const [check, setCheck] = useState(Unchecked);
   const [activeText, setActiveText] = useState('#F9D3B466');
@@ -29,8 +30,15 @@ export default function home({navigation}) {
     }
   };
   const changetext = text => {
-    setMobileNumber(text);
+    let str = '';
+    str = str + text;
+    if (str.length == 10) {
+      setMobileNumber(str);
+    } else {
+      setMobileNumber('');
+    }
   };
+  const dispatch = useDispatch();
   return (
     <SafeAreaView
       style={{
@@ -69,7 +77,9 @@ export default function home({navigation}) {
             score.
           </Text>
           <TouchableOpacity
-            onPress={() => navigation.navigate('OTP', mobileNumber)}
+            onPress={() =>
+              navigation.navigate('OTP', dispatch(PhoneNumber(mobileNumber)))
+            }
             disabled={buttonEnable}>
             <InnerShadow
               height={90}
