@@ -5,6 +5,7 @@ import HomeScreen from './screens/home';
 import Onboarding from './screens/enterDetails';
 import OTP from '../src/screens/otpscreen';
 import SplashScreen from '../src/screens/splashScreen';
+import Permission from '../src/screens/permission';
 const Stack = createNativeStackNavigator();
 
 function Route() {
@@ -29,6 +30,11 @@ function Route() {
         <Stack.Screen
           name="OTP"
           component={OTP}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Permission"
+          component={Permission}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

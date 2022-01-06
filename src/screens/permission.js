@@ -10,9 +10,9 @@ import {
   SafeAreaView,
 } from 'react-native';
 import InnerShadow from '../components/neomorphic/innerShadow';
-import Shadow from '../components/neomorphic/shadow';
+// import Shadow from '../components/neomorphic/shadow';
 
-export default function home({navigation, route}) {
+export default function Permission({navigation, route}) {
   const [buttonEnable, setButtonEnable] = useState(true);
   const onChangeText = text => {
     if (text.length == 4) {
@@ -26,7 +26,7 @@ export default function home({navigation, route}) {
         flex: 1,
       }}>
       <View style={styles.mainWrapper}>
-        <Shadow
+        {/* <Shadow
           height={45}
           width={45}
           style={styles.shadow}
@@ -35,13 +35,33 @@ export default function home({navigation, route}) {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image source={require('../assets/leftArrow.png')} />
           </TouchableOpacity>
-        </Shadow>
+        </Shadow> */}
+        <View style={{flexDirection: 'row-reverse'}}>
+          <View sty>
+            <Text
+              style={{
+                color: '#4B4E4F',
+                marginRight: 24,
+                marginBottom: 10,
+              }}>
+              Deny permission
+            </Text>
+            <View
+              style={{
+                height: 0, // height is '0' so that the view will not occupy space
+                width: 110, // as much as you want to 'Stretch' the underline
+                borderWidth: 1,
+                borderColor: '#4B4E4F',
+                borderStyle: 'dotted',
+              }}></View>
+          </View>
+        </View>
         <View style={styles.textWrapper}>
-          <Text style={styles.onboardingText}>we have sent you</Text>
-          <Text style={styles.onboardingText}>an OTP</Text>
-          <Text style={styles.detailsText}>
+          <Text style={styles.onboardingText}>we take the</Text>
+          <Text style={styles.onboardingText}>following permission</Text>
+          {/* <Text style={styles.detailsText}>
             enter the 4 digit OTP sent on <Text>{route.params}</Text> to proceed
-          </Text>
+          </Text> */}
           <TextInput
             placeholder="OTP"
             placeholderTextColor="#343739"
@@ -57,7 +77,7 @@ export default function home({navigation, route}) {
         </View>
         <View>
           <TouchableOpacity
-            // onPress={() => navigation.navigate('Permission')}
+            onPress={() => navigation.navigate('OTP')}
             disabled={buttonEnable}>
             <InnerShadow
               height={80}

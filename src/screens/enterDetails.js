@@ -21,12 +21,11 @@ export default function home({navigation}) {
   const checkbox = () => {
     if (check == Unchecked) {
       setCheck(Checked);
-      setActiveText('#F9D3B4');
       setButtonEnable(false);
+      setActiveText('#F9D3B4');
     } else {
       setCheck(Unchecked);
       setActiveText('#F9D3B466');
-      setButtonEnable(true);
     }
   };
   const changetext = text => {
