@@ -6,12 +6,27 @@ import {
   Dimensions,
   Image,
   TouchableOpacity,
+  Animated,
+  Easing,
 } from 'react-native';
 import Shadow from '../components/neomorphic/shadow';
 import InnerShadow from '../components/neomorphic/innerShadow';
 const ScreenWidth = Dimensions.get('window').width;
 const ScreenHeight = Dimensions.get('window').height;
 export default function home({navigation}) {
+  const spinValue = new Animated.Value(0);
+
+  Animated.timing(spinValue, {
+    toValue: 1,
+    duration: 3000,
+    easing: Easing.linear,
+    useNativeDriver: true,
+  }).start();
+
+  const spin = spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '360deg'],
+  });
   return (
     <View
       style={{
@@ -28,7 +43,11 @@ export default function home({navigation}) {
             alignItems: 'center',
             paddingTop: 80,
           }}>
-          <Image source={require('../assets/onboarding.png')} />
+          <Animated.Image
+            style={{transform: [{rotate: spin}]}}
+            source={require('../assets/onboarding.png')}
+          />
+          {/* <Image source={require('../assets/onboarding.png')} /> */}
         </View>
         <View
           style={{
