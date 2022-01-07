@@ -19,7 +19,7 @@ export default function home({navigation}) {
   Animated.loop(
     Animated.timing(spinValue, {
       toValue: 1,
-      duration: 3000,
+      duration: 4000,
       easing: Easing.linear,
       useNativeDriver: true,
     }),

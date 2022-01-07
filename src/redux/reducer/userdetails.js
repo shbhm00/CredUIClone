@@ -1,4 +1,3 @@
-import {Login, Login1} from '../action/actionTypes';
 const initialState = {
   userDetails: '',
 };
