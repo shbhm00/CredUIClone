@@ -19,7 +19,7 @@ export default function home({navigation}) {
   Animated.loop(
     Animated.timing(spinValue, {
       toValue: 1,
-      duration: 4000,
+      duration: 4500,
       easing: Easing.linear,
       useNativeDriver: true,
     }),
@@ -45,10 +45,32 @@ export default function home({navigation}) {
             alignItems: 'center',
             paddingTop: 80,
           }}>
-          <Animated.Image
-            style={{transform: [{rotate: spin}]}}
-            source={require('../assets/onboarding.png')}
-          />
+          <View>
+            <Animated.Image
+              style={{transform: [{rotate: spin}]}}
+              source={require('../assets/onboarding.png')}
+            />
+            <View
+              style={{
+                position: 'absolute',
+                top: 35,
+                height: 150,
+                width: 150,
+                borderRadius: 1000,
+                backgroundColor: '#1f2427',
+                justifyContent: 'center',
+                alignItems: 'center',
+                overflow: 'hidden',
+                left: 47,
+              }}>
+              <Animated.Image
+                style={{
+                  borderRadius: 50,
+                }}
+                source={require('../assets/onboarding.png')}
+              />
+            </View>
+          </View>
           {/* <Image source={require('../assets/onboarding.png')} /> */}
         </View>
         <View
