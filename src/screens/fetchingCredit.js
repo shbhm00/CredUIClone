@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -9,7 +9,12 @@ import {
   Image,
 } from 'react-native';
 import {vh, vw, normalize} from '../dimension/dimension';
-export default function fetchingCredit() {
+export default function fetchingCredit({navigation}) {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('CreditScore');
+    }, 3000);
+  });
   const spinValue = new Animated.Value(0);
   Animated.loop(
     Animated.timing(spinValue, {
