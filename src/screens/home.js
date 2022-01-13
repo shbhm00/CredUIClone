@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import Shadow from '../components/neomorphic/shadow';
 import InnerShadow from '../components/neomorphic/innerShadow';
+import {vh, vw, normalize} from '../dimension/dimension';
 const ScreenWidth = Dimensions.get('window').width;
 const ScreenHeight = Dimensions.get('window').height;
 export default function home({navigation}) {
@@ -43,7 +44,7 @@ export default function home({navigation}) {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            paddingTop: 80,
+            paddingTop: vh(80),
           }}>
           <View>
             <Animated.Image
@@ -53,15 +54,15 @@ export default function home({navigation}) {
             <View
               style={{
                 position: 'absolute',
-                top: 35,
-                height: 150,
-                width: 150,
+                top: normalize(30),
+                height: normalize(150),
+                width: normalize(150),
                 borderRadius: 1000,
                 backgroundColor: '#1f2427',
                 justifyContent: 'center',
                 alignItems: 'center',
                 overflow: 'hidden',
-                left: 47,
+                left: normalize(45),
               }}>
               <Animated.Image
                 style={{
@@ -84,8 +85,8 @@ export default function home({navigation}) {
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Onboarding')}>
             <InnerShadow
-              height={80}
-              width={ScreenWidth - 40}
+              height={vh(80)}
+              width={ScreenWidth - vw(40)}
               style={styles.shadow1}
               topColor={'#15181b'}
               bottomColor={'#293033'}
@@ -93,7 +94,7 @@ export default function home({navigation}) {
               gradientSecondColor={'#21272a'}>
               <Shadow
                 height={50}
-                width={ScreenWidth - 50}
+                width={ScreenWidth - vw(50)}
                 style={styles.shadow}
                 topColor={'#15181b'}
                 bottomColor={'#293033'}>
@@ -116,10 +117,10 @@ export default function home({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: 50,
-    height: 100,
-    width: 200,
-    borderRadius: 100 / 2,
+    marginLeft: vw(50),
+    height: vh(100),
+    width: vw(200),
+    borderRadius: vh(100) / 2,
     backgroundColor: 'grey',
   },
   container1: {
@@ -137,9 +138,9 @@ const styles = StyleSheet.create({
   },
   onboardingText: {
     color: '#CFD0D0',
-    fontSize: 24,
-    width: 300,
-    marginVertical: 30,
+    fontSize: normalize(24),
+    width: vw(300),
+    marginVertical: vh(30),
     fontWeight: '700',
     letterSpacing: 1,
     textAlign: 'center',

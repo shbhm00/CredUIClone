@@ -14,6 +14,7 @@ import InnerShadow from '../components/neomorphic/innerShadow';
 import Checked from '../assets/checked.png';
 import Unchecked from '../assets/Checkbox.png';
 import {PhoneNumber} from '../redux/action/index';
+import {vh, vw, normalize} from '../dimension/dimension';
 export default function home({navigation}) {
   const [check, setCheck] = useState(Unchecked);
   const [activeText, setActiveText] = useState('#F9D3B466');
@@ -82,8 +83,8 @@ export default function home({navigation}) {
             }
             disabled={buttonEnable}>
             <InnerShadow
-              height={90}
-              width={208}
+              height={vh(90)}
+              width={vw(208)}
               style={styles.shadow1}
               topColor={'#15181b'}
               bottomColor={'#293033'}
@@ -103,9 +104,9 @@ export default function home({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: 50,
-    height: 100,
-    width: 200,
+    marginLeft: vw(50),
+    height: vh(100),
+    width: vw(200),
     borderRadius: 100 / 2,
     backgroundColor: 'grey',
   },
@@ -121,32 +122,32 @@ const styles = StyleSheet.create({
   },
   shadow1: {
     backgroundColor: '#343232',
-    marginVertical: 30,
+    marginVertical: vh(30),
   },
   onboardingText: {
     color: '#CFD0D0',
-    fontSize: 20,
-    width: 300,
+    fontSize: normalize(20),
+    width: vw(300),
     fontWeight: '700',
     letterSpacing: 1,
   },
   mainWrapper: {
-    paddingLeft: 24,
-    paddingTop: 83,
+    paddingLeft: vw(24),
+    paddingTop: vh(83),
     flex: 1,
   },
   detailsText: {
     fontSize: 16,
     color: '#8C8E8F',
     fontWeight: '500',
-    lineHeight: 22,
+    lineHeight: vh(22),
     letterSpacing: 0.5,
-    width: 278,
-    paddingVertical: 8,
+    width: vw(278),
+    paddingVertical: vh(8),
   },
   textInput: {
-    fontSize: 30,
-    paddingVertical: 34,
+    fontSize: normalize(30),
+    paddingVertical: vh(34),
     color: '#CFD0D0',
     fontWeight: '500',
   },
@@ -157,14 +158,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   checkbox: {
-    marginVertical: 20,
+    marginVertical: vh(20),
   },
   paragraph: {
     color: '#4B4E4F',
-    width: 340,
-    fontSize: 12,
-    lineHeight: 22,
-    marginTop: 5,
+    width: vw(340),
+    fontSize: normalize(12),
+    lineHeight: vh(22),
+    marginTop: vh(5),
   },
   spanText: {
     color: '#8C8E8F',

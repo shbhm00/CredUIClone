@@ -61,7 +61,7 @@ export default function home({navigation, route}) {
         </View>
         <View>
           <TouchableOpacity
-            // onPress={() => navigation.navigate('Permission')}
+            onPress={() => navigation.navigate('Credit')}
             disabled={buttonEnable}>
             <InnerShadow
               height={80}

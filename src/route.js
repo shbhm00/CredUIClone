@@ -5,7 +5,8 @@ import HomeScreen from './screens/home';
 import Onboarding from './screens/enterDetails';
 import OTP from '../src/screens/otpscreen';
 import SplashScreen from '../src/screens/splashScreen';
-import Permission from '../src/screens/permission';
+import Credit from '../src/screens/fetchingCredit';
+import CreditScore from '../src/screens/creditscore';
 const Stack = createNativeStackNavigator();
 
 function Route() {
@@ -32,11 +33,16 @@ function Route() {
           component={OTP}
           options={{headerShown: false}}
         />
-        {/* <Stack.Screen
-          name="Permission"
-          component={Permission}
+        <Stack.Screen
+          name="Credit"
+          component={Credit}
           options={{headerShown: false}}
-        /> */}
+        />
+        <Stack.Screen
+          name="CreditScore"
+          component={CreditScore}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
