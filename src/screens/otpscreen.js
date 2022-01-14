@@ -29,16 +29,16 @@ export default function home({navigation, route}) {
         flex: 1,
       }}>
       <View style={styles.mainWrapper}>
-        <Shadow
-          height={45}
-          width={45}
-          style={styles.shadow}
-          topColor={'#15181b'}
-          bottomColor={'#293033'}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Shadow
+            height={45}
+            width={45}
+            style={styles.shadow}
+            topColor={'#15181b'}
+            bottomColor={'#293033'}>
             <Image source={require('../assets/leftArrow.png')} />
-          </TouchableOpacity>
-        </Shadow>
+          </Shadow>
+        </TouchableOpacity>
         <View style={styles.textWrapper}>
           <Text style={styles.onboardingText}>we have sent you</Text>
           <Text style={styles.onboardingText}>an OTP</Text>

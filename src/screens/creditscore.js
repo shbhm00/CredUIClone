@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   Dimensions,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import InnerShadow from '../components/neomorphic/innerShadow';
@@ -20,14 +21,35 @@ export default function creditscore() {
   const score = () => {
     var number;
     do {
-      number = Math.floor(Math.random() * 999);
+      number = Math.floor(100 + Math.random() * 799);
     } while (number < 100);
     setCreditScore(number);
   };
   return (
     <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={{left: vw(24), paddingBottom: vh(30)}}>
+        <Shadow
+          height={45}
+          width={45}
+          style={styles.shadow}
+          topColor={'#15181b'}
+          bottomColor={'#293033'}>
+          <Image source={require('../assets/leftArrow.png')} />
+        </Shadow>
+      </TouchableOpacity>
       <View styles={styles.textContainer}>
-        <Text>your experian score</Text>
+        <Text
+          style={{
+            color: '#CFD0D0',
+            marginLeft: vw(24),
+            fontSize: 20,
+            fontWeight: '700',
+            letterSpacing: 0.5,
+          }}>
+          your experian score
+        </Text>
         <Text></Text>
       </View>
       <View style={styles.centerWrapper}>
@@ -65,6 +87,7 @@ export default function creditscore() {
           </Shadow>
         </TouchableOpacity>
       </View>
+      <View style={{flex: 1}}></View>
     </SafeAreaView>
   );
 }
@@ -74,18 +97,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#1f2427',
   },
   shadow: {
-    backgroundColor: '#30519b',
+    backgroundColor: '#1f2427',
   },
   refershText: {
-    color: 'white',
+    color: '#CFD0D0',
     fontWeight: '500',
     fontSize: normalize(15),
   },
-  textContainer: {
-    marginLeft: vw(24),
-  },
+  textContainer: {flex: 1},
   centerWrapper: {
+    flex: 2,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   refreshButton: {
     paddingTop: normalize(40),

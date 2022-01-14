@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -9,12 +9,21 @@ import {
   Image,
 } from 'react-native';
 import {vh, vw, normalize} from '../dimension/dimension';
+import Cards from '../assets/Card.png';
+import successCard from '../assets/successCard.png';
 export default function fetchingCredit({navigation}) {
+  const [image, setImage] = useState(Cards);
+  useEffect(() => {
+    setTimeout(() => {
+      setImage(successCard);
+    }, 3000);
+  });
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('CreditScore');
-    }, 3000);
+    }, 4000);
   });
+
   const spinValue = new Animated.Value(0);
   Animated.loop(
     Animated.timing(spinValue, {
@@ -38,10 +47,7 @@ export default function fetchingCredit({navigation}) {
         </Text>
       </View>
       <View style={styles.animatedCard}>
-        <Animated.Image
-          style={{transform: [{rotate: spin}]}}
-          source={require('../assets/Card.png')}
-        />
+        <Animated.Image style={{transform: [{rotate: spin}]}} source={Cards} />
         <View
           style={{
             position: 'absolute',
@@ -59,7 +65,7 @@ export default function fetchingCredit({navigation}) {
             style={{
               borderRadius: 50,
             }}
-            source={require('../assets/Card.png')}
+            source={image}
           />
         </View>
       </View>
