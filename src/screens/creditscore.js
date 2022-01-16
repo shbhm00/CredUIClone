@@ -87,6 +87,7 @@ export default function creditscore() {
           </Shadow>
         </TouchableOpacity>
       </View>
+      <Text>your credit score is better than `${}`</Text>
       <View style={{flex: 1}}></View>
     </SafeAreaView>
   );
