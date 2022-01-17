@@ -18,6 +18,7 @@ export default function BottomTab() {
         component={HomeScreen}
         options={{
           tabBarShowLabel: false,
+          headerShown: false,
           tabBarIcon: ({focused, size}) =>
             focused ? (
               <Image
@@ -35,6 +36,7 @@ export default function BottomTab() {
         component={Cards}
         options={{
           tabBarShowLabel: false,
+          headerShown: false,
           tabBarIcon: ({focused, size}) =>
             focused ? (
               <Image
@@ -52,6 +54,7 @@ export default function BottomTab() {
         component={Money}
         options={{
           tabBarShowLabel: false,
+          headerShown: false,
           tabBarIcon: ({focused, size}) =>
             focused ? (
               <Image
@@ -69,6 +72,7 @@ export default function BottomTab() {
         component={Club}
         options={{
           tabBarShowLabel: false,
+          headerShown: false,
           tabBarIcon: ({focused, size}) =>
             focused ? (
               <Image
