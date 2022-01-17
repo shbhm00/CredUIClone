@@ -33,7 +33,7 @@ export default function Permission({navigation, route}) {
           topColor={'#15181b'}
           bottomColor={'#293033'}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image source={require('../assets/leftArrow.png')} />
+            <Image source={require('../assets/onboardingIcons/leftArrow.png')} />
           </TouchableOpacity>
         </Shadow> */}
         <View style={{flexDirection: 'row-reverse'}}>
@@ -101,7 +101,7 @@ export default function Permission({navigation, route}) {
         </View>
       </View>
       <View style={styles.bottomWrapper}>
-        <Image source={require('../assets/Divider.png')} />
+        <Image source={require('../assets/onboardingIcons/Divider.png')} />
         <View style={styles.bottomPara}>
           <Text style={styles.paragraph}>
             by clicking on continue, you are indicating that you have read and

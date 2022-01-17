@@ -13,7 +13,7 @@ import InnerShadow from '../components/neomorphic/innerShadow';
 import Shadow from '../components/neomorphic/shadow';
 import {vh, vw, normalize} from '../dimension/dimension';
 const ScreenWidth = Dimensions.get('window').width;
-export default function creditscore() {
+export default function creditscore({navigation}) {
   const [crediScore, setCreditScore] = useState(null);
   const [percentageScore, setPercentageSore] = useState(null);
   useEffect(() => {
@@ -21,16 +21,14 @@ export default function creditscore() {
   }, []);
   const score = () => {
     var number;
-    do {
-      number = Math.floor(100 + Math.random() * 799);
-    } while (number < 100);
+    number = Math.floor(100 + Math.random() * 799);
     setCreditScore(number);
     setPercentageSore(Math.ceil((number / 900) * 100));
   };
   console.log('numbereee', percentageScore);
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         onPress={() => navigation.goBack()}
         style={{left: vw(24), paddingBottom: vh(30)}}>
         <Shadow
@@ -39,17 +37,18 @@ export default function creditscore() {
           style={styles.shadow}
           topColor={'#15181b'}
           bottomColor={'#293033'}>
-          <Image source={require('../assets/leftArrow.png')} />
+          <Image source={require('../assets/onboardingIcons/leftArrow.png')} />
         </Shadow>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <View styles={styles.textContainer}>
         <Text
           style={{
             color: '#CFD0D0',
             marginLeft: vw(24),
-            fontSize: 20,
+            fontSize: normalize(20),
             fontWeight: '700',
             letterSpacing: 0.5,
+            paddingTop: vh(30),
           }}>
           your experian score
         </Text>
@@ -90,7 +89,7 @@ export default function creditscore() {
       </View>
       <View style={styles.bottomshadowWrapper}>
         <View style={styles.cardWrapper}>
-          <View style={{paddingLeft: 20}}>
+          <View style={{paddingLeft: 30}}>
             <Text style={{color: 'white', fontSize: 25, fontWeight: '700'}}>
               {percentageScore}%
             </Text>
@@ -111,16 +110,18 @@ export default function creditscore() {
             fill={crediScore / 10}
             tintColor="green"
             duration={2000}
-            style={{paddingRight: normalize(20)}}
+            style={{paddingRight: normalize(30)}}
             backgroundColor="#3d5875"></AnimatedCircularProgress>
         </View>
       </View>
       <Image
-        source={require('../assets/Divider.png')}
+        source={require('../assets/onboardingIcons/Divider.png')}
         style={{paddingTop: normalize(10)}}
       />
       <View style={{flex: 0.5, alignItems: 'center'}}>
-        <TouchableOpacity onPress={() => score()} style={styles.refreshButton}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('BottomTab')}
+          style={styles.refreshButton}>
           <Shadow
             height={50}
             width={150}
@@ -174,7 +175,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1c1d1c',
     borderRadius: 30,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
 });

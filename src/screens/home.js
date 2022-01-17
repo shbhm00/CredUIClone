@@ -49,7 +49,7 @@ export default function home({navigation}) {
           <View>
             <Animated.Image
               style={{transform: [{rotate: spin}]}}
-              source={require('../assets/onboarding.png')}
+              source={require('../assets/onboardingIcons/onboarding.png')}
             />
             <View
               style={{
@@ -68,11 +68,11 @@ export default function home({navigation}) {
                 style={{
                   borderRadius: 50,
                 }}
-                source={require('../assets/onboarding.png')}
+                source={require('../assets/onboardingIcons/onboarding.png')}
               />
             </View>
           </View>
-          {/* <Image source={require('../assets/onboarding.png')} /> */}
+          {/* <Image source={require('../assets/onboardingIcons/onboarding.png')} /> */}
         </View>
         <View
           style={{

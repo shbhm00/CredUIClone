@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import InnerShadow from '../components/neomorphic/innerShadow';
-import Checked from '../assets/checked.png';
-import Unchecked from '../assets/Checkbox.png';
+import Checked from '../assets/onboardingIcons/checked.png';
+import Unchecked from '../assets/onboardingIcons/Checkbox.png';
 import {PhoneNumber} from '../redux/action/index';
 import {vh, vw, normalize} from '../dimension/dimension';
 export default function home({navigation}) {
@@ -63,7 +63,7 @@ export default function home({navigation}) {
             onChangeText={text => changetext(text)}
           />
         </View>
-        <Image source={require('../assets/Divider.png')} />
+        <Image source={require('../assets/onboardingIcons/Divider.png')} />
         <View style={styles.bottomWrapper}>
           <TouchableOpacity onPress={checkbox}>
             <Image source={check} style={styles.checkbox} />

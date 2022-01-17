@@ -7,6 +7,7 @@ import OTP from '../src/screens/otpscreen';
 import SplashScreen from '../src/screens/splashScreen';
 import Credit from '../src/screens/fetchingCredit';
 import CreditScore from '../src/screens/creditscore';
+import BottomTab from './bottomTab';
 const Stack = createNativeStackNavigator();
 
 function Route() {
@@ -41,6 +42,11 @@ function Route() {
         <Stack.Screen
           name="CreditScore"
           component={CreditScore}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="BottomTab"
+          component={BottomTab}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

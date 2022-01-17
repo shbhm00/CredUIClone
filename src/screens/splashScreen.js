@@ -15,7 +15,7 @@ export default function splashScreen({navigation}) {
       }}>
       <View style={{alignSelf: 'center', marginTop: screenHeight / 2.7}}>
         <Image
-          source={require('../assets/logo.gif')}
+          source={require('../assets/onboardingIcons/logo.gif')}
           style={{height: 300, width: 300}}
         />
       </View>

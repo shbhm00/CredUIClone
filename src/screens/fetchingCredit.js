@@ -9,8 +9,8 @@ import {
   Image,
 } from 'react-native';
 import {vh, vw, normalize} from '../dimension/dimension';
-import Cards from '../assets/Card.png';
-import successCard from '../assets/successCard.png';
+import Cards from '../assets/onboardingIcons/Card.png';
+import successCard from '../assets/onboardingIcons/successCard.png';
 export default function fetchingCredit({navigation}) {
   const [image, setImage] = useState(Cards);
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function fetchingCredit({navigation}) {
         </View>
       </View>
       <View style={styles.divider}>
-        <Image source={require('../assets/Divider.png')} />
+        <Image source={require('../assets/onboardingIcons/Divider.png')} />
         <Text style={styles.headingPara1}>calibrating your score</Text>
       </View>
     </SafeAreaView>
