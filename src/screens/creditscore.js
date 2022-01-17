@@ -15,6 +15,7 @@ import {vh, vw, normalize} from '../dimension/dimension';
 const ScreenWidth = Dimensions.get('window').width;
 export default function creditscore() {
   const [crediScore, setCreditScore] = useState(null);
+  const [percentageScore, setPercentageSore] = useState(null);
   useEffect(() => {
     score();
   }, []);
@@ -24,7 +25,9 @@ export default function creditscore() {
       number = Math.floor(100 + Math.random() * 799);
     } while (number < 100);
     setCreditScore(number);
+    setPercentageSore(Math.ceil((number / 900) * 100));
   };
+  console.log('numbereee', percentageScore);
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
@@ -56,7 +59,6 @@ export default function creditscore() {
         <InnerShadow
           height={vh(250)}
           width={vw(170)}
-          style={styles.shadow1}
           topColor={'#15181b'}
           bottomColor={'#293033'}
           gradientFirstColor={'#1c2023'}
@@ -66,7 +68,6 @@ export default function creditscore() {
             width={15}
             fill={crediScore / 10}
             tintColor="#00e0ff"
-            onAnimationComplete={() => console.log('onAnimationComplete')}
             duration={2000}
             backgroundColor="#3d5875">
             {fill => (
@@ -87,8 +88,49 @@ export default function creditscore() {
           </Shadow>
         </TouchableOpacity>
       </View>
-      <Text>your credit score is better than `${}`</Text>
-      <View style={{flex: 1}}></View>
+      <View style={styles.bottomshadowWrapper}>
+        <View style={styles.cardWrapper}>
+          <View style={{paddingLeft: 20}}>
+            <Text style={{color: 'white', fontSize: 25, fontWeight: '700'}}>
+              {percentageScore}%
+            </Text>
+            <Text
+              style={{
+                color: '#CFD0D0',
+                fontSize: normalize(15),
+                fontWeight: '500',
+                width: '80%',
+                paddingTop: 10,
+              }}>
+              Your score is better than {percentageScore}% of india
+            </Text>
+          </View>
+          <AnimatedCircularProgress
+            size={50}
+            width={15}
+            fill={crediScore / 10}
+            tintColor="green"
+            duration={2000}
+            style={{paddingRight: normalize(20)}}
+            backgroundColor="#3d5875"></AnimatedCircularProgress>
+        </View>
+      </View>
+      <Image
+        source={require('../assets/Divider.png')}
+        style={{paddingTop: normalize(10)}}
+      />
+      <View style={{flex: 0.5, alignItems: 'center'}}>
+        <TouchableOpacity onPress={() => score()} style={styles.refreshButton}>
+          <Shadow
+            height={50}
+            width={150}
+            style={styles.shadow}
+            topColor={'#15181b'}
+            bottomColor={'#293033'}>
+            <Text style={styles.moreinfoText}>More info</Text>
+          </Shadow>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
@@ -107,11 +149,32 @@ const styles = StyleSheet.create({
   },
   textContainer: {flex: 1},
   centerWrapper: {
-    flex: 2,
+    flex: 1.5,
     alignItems: 'center',
     justifyContent: 'center',
   },
   refreshButton: {
-    paddingTop: normalize(40),
+    paddingTop: normalize(30),
+  },
+  moreinfoText: {
+    color: '#F9D3B4',
+    fontSize: normalize(15),
+    fontWeight: '700',
+  },
+  shadow1: {
+    borderRadius: 30,
+  },
+  bottomshadowWrapper: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  cardWrapper: {
+    height: normalize(200),
+    width: normalize(330),
+    backgroundColor: '#1c1d1c',
+    borderRadius: 30,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
