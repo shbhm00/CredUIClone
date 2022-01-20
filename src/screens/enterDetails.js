@@ -15,6 +15,7 @@ import Checked from '../assets/onboardingIcons/checked.png';
 import Unchecked from '../assets/onboardingIcons/Checkbox.png';
 import {PhoneNumber} from '../redux/action/index';
 import {vh, vw, normalize} from '../dimension/dimension';
+import {Keyboard} from 'react-native';
 export default function home({navigation}) {
   const [check, setCheck] = useState(Unchecked);
   const [activeText, setActiveText] = useState('#F9D3B466');
@@ -25,9 +26,11 @@ export default function home({navigation}) {
       setCheck(Checked);
       setButtonEnable(false);
       setActiveText('#F9D3B4');
+      Keyboard.dismiss();
     } else {
       setCheck(Unchecked);
       setActiveText('#F9D3B466');
+      Keyboard.dismiss();
     }
   };
   const changetext = text => {

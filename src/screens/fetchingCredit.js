@@ -40,33 +40,40 @@ export default function fetchingCredit({navigation}) {
   });
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flex: 1.9, alignItems: 'center', width: '80%'}}>
+      <View style={{flex: 1, alignItems: 'center', width: '80%'}}>
         <Text style={styles.heading}>fetching your credit score</Text>
         <Text style={styles.headingPara}>
           hang on, while we check your eligibility
         </Text>
       </View>
       <View style={styles.animatedCard}>
-        <Animated.Image style={{transform: [{rotate: spin}]}} source={Cards} />
-        <View
-          style={{
-            position: 'absolute',
-            top: normalize(8),
-            left: normalize(8),
-            height: normalize(150),
-            width: normalize(150),
-            borderRadius: 1000,
-            backgroundColor: '#1f2427',
-            justifyContent: 'center',
-            alignItems: 'center',
-            overflow: 'hidden',
-          }}>
+        <View>
           <Animated.Image
-            style={{
-              borderRadius: 50,
-            }}
-            source={image}
+            style={{transform: [{rotate: spin}]}}
+            source={Cards}
           />
+          <View
+            style={{
+              position: 'absolute',
+              top: normalize(10.5),
+              height: normalize(150),
+              width: normalize(150),
+              borderRadius: 1000,
+              backgroundColor: '#1f2427',
+              justifyContent: 'center',
+              alignItems: 'center',
+              overflow: 'hidden',
+              left: normalize(10),
+            }}>
+            <Animated.Image
+              style={{
+                borderRadius: 60,
+                height: normalize(135),
+                width: normalize(135),
+              }}
+              source={image}
+            />
+          </View>
         </View>
       </View>
       <View style={styles.divider}>
@@ -101,10 +108,13 @@ const styles = StyleSheet.create({
     paddingTop: normalize(30),
   },
   animatedCard: {
-    flex: 2,
+    flex: 2.2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingBottom: 40,
   },
   divider: {
-    flex: 0.6,
+    flex: 0.5,
     alignItems: 'center',
   },
   headingPara1: {

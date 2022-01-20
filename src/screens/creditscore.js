@@ -56,15 +56,15 @@ export default function creditscore({navigation}) {
       </View>
       <View style={styles.centerWrapper}>
         <InnerShadow
-          height={vh(250)}
-          width={vw(170)}
+          height={normalize(250)}
+          width={normalize(170)}
           topColor={'#15181b'}
           bottomColor={'#293033'}
           gradientFirstColor={'#1c2023'}
           gradientSecondColor={'#21272a'}>
           <AnimatedCircularProgress
-            size={150}
-            width={15}
+            size={normalize(150)}
+            width={normalize(15)}
             fill={crediScore / 10}
             tintColor="#00e0ff"
             duration={2000}
@@ -116,7 +116,7 @@ export default function creditscore({navigation}) {
       </View>
       <Image
         source={require('../assets/onboardingIcons/Divider.png')}
-        style={{paddingTop: normalize(10)}}
+        style={{marginTop: normalize(15)}}
       />
       <View style={{flex: 0.5, alignItems: 'center'}}>
         <TouchableOpacity
