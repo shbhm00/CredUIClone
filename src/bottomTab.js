@@ -5,6 +5,7 @@ import HomeScreen from './screens/bottomTab/home';
 import Cards from './screens/bottomTab/card';
 import Money from './screens/bottomTab/money';
 import Club from './screens/bottomTab/club';
+import Modal from './screens/bottomTab/modal';
 const Tab = createBottomTabNavigator();
 
 export default function BottomTab() {
@@ -45,6 +46,27 @@ export default function BottomTab() {
             ) : (
               <Image
                 source={require('./assets/bottomtabIcons/inactive_card.png')}
+              />
+            ),
+        }}
+      />
+      <Tab.Screen
+        name="Modal"
+        component={Modal}
+        // screenOptions={{presentation: 'modal'}}
+        options={{
+          tabBarShowLabel: false,
+          headerShown: false,
+          tabBarIcon: ({focused, size}) =>
+            focused ? (
+              <Image
+                source={require('./assets/bottomtabIcons/modal-icons/active_modal.png')}
+                style={{height: 80, width: 80}}
+              />
+            ) : (
+              <Image
+                source={require('./assets/bottomtabIcons/modal-icons/inactive_modal.png')}
+                style={{height: 80, width: 80}}
               />
             ),
         }}
