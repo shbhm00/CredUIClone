@@ -12,16 +12,19 @@ import {
 import {useSelector} from 'react-redux';
 import InnerShadow from '../components/neomorphic/innerShadow';
 import Shadow from '../components/neomorphic/shadow';
-
-export default function home({navigation, route}) {
+import {UserName} from '../redux/action/index';
+import {vh, vw, normalize} from '../dimension/dimension';
+import {useDispatch} from 'react-redux';
+export default function Name({navigation}) {
   const [buttonEnable, setButtonEnable] = useState(true);
+  const [name, setName] = useState('');
   const onChangeText = text => {
-    if (text.length == 4) {
-      setButtonEnable(false);
-    }
+    setButtonEnable(false);
+    setName(text);
   };
-  const counter = useSelector(state => state);
+  //   const counter = useSelector(state => state);
   //   console.log('counter', counter.authReducer.userDetails);
+  const dispatch = useDispatch();
   return (
     <SafeAreaView
       style={{
@@ -31,8 +34,8 @@ export default function home({navigation, route}) {
       <View style={styles.mainWrapper}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Shadow
-            height={45}
-            width={45}
+            height={normalize(45)}
+            width={normalize(45)}
             style={styles.shadow}
             topColor={'#15181b'}
             bottomColor={'#293033'}>
@@ -42,32 +45,25 @@ export default function home({navigation, route}) {
           </Shadow>
         </TouchableOpacity>
         <View style={styles.textWrapper}>
-          <Text style={styles.onboardingText}>we have sent you</Text>
-          <Text style={styles.onboardingText}>an OTP</Text>
-          <Text style={styles.detailsText}>
-            enter the 4 digit OTP sent on{' '}
-            <Text>{counter.authReducer.userDetails}</Text> to proceed
-          </Text>
+          <Text style={styles.onboardingText}>enter your name</Text>
           <TextInput
-            placeholder="OTP"
+            placeholder="NAME"
             placeholderTextColor="#343739"
             style={styles.textInput}
-            maxLength={4}
+            autoCapitalize="characters"
             autoFocus
-            keyboardType="numeric"
             onChangeText={text => onChangeText(text)}
           />
-          <Text style={styles.detailsText1}>
-            didn't receive OTP? <Text>Resend OTP</Text>
-          </Text>
         </View>
         <View>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Name')}
+            onPress={() =>
+              navigation.navigate('Email', dispatch(UserName(name)))
+            }
             disabled={buttonEnable}>
             <InnerShadow
-              height={80}
-              width={120}
+              height={normalize(80)}
+              width={normalize(120)}
               style={styles.shadow1}
               topColor={'#15181b'}
               bottomColor={'#293033'}
@@ -76,7 +72,7 @@ export default function home({navigation, route}) {
               <Text
                 style={{
                   color: '#F9D3B4',
-                  fontSize: 16,
+                  fontSize: normalize(16),
                   fontWeight: '500',
                   letterSpacing: 0.5,
                 }}>
@@ -105,65 +101,65 @@ const styles = StyleSheet.create({
     backgroundColor: '#1f2427',
   },
   linearGradient: {
-    borderRadius: 60,
+    borderRadius: normalize(60),
   },
   shadow1: {
     backgroundColor: '#343232',
   },
   onboardingText: {
     color: '#CFD0D0',
-    fontSize: 20,
-    width: 300,
+    fontSize: normalize(20),
+    width: normalize(300),
     fontWeight: '700',
     letterSpacing: 1,
   },
   mainWrapper: {
-    paddingLeft: 24,
-    paddingTop: 20,
+    paddingLeft: normalize(24),
+    paddingTop: normalize(50),
     flex: 4.5,
   },
   detailsText: {
-    fontSize: 16,
+    fontSize: normalize(16),
     color: '#8C8E8F',
     fontWeight: '500',
-    lineHeight: 22,
+    lineHeight: normalize(22),
     letterSpacing: 0.5,
-    width: 278,
-    paddingVertical: 8,
+    width: normalize(278),
+    paddingVertical: normalize(8),
   },
   detailsText1: {
-    fontSize: 13,
+    fontSize: normalize(13),
     color: '#8C8E8F',
     fontWeight: '500',
-    lineHeight: 22,
+    lineHeight: normalize(22),
     letterSpacing: 0.5,
-    width: 278,
+    width: normalize(278),
     paddingVertical: 8,
-    marginBottom: 20,
+    marginBottom: normalize(20),
   },
   textInput: {
-    fontSize: 30,
-    paddingVertical: 34,
+    fontSize: normalize(30),
+    paddingVertical: normalize(34),
     color: '#CFD0D0',
     fontWeight: '500',
     letterSpacing: 0.5,
   },
   textWrapper: {
-    paddingTop: 30,
+    paddingTop: normalize(30),
   },
   bottomWrapper: {
     flex: 1,
-    paddingLeft: 24,
+    paddingLeft: normalize(24),
   },
   bottomPara: {
-    paddingTop: 30,
+    paddingTop: normalize(30),
   },
   paragraph: {
     color: '#4B4E4F',
-    width: 340,
-    fontSize: 12,
-    lineHeight: 22,
-    marginTop: 5,
+    width: normalize(340),
+    fontSize: normalize(12),
+    lineHeight: normalize(22),
+    marginTop: normalize(5),
   },
   spanText: {
     color: '#8C8E8F',

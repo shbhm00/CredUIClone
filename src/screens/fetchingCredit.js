@@ -55,7 +55,7 @@ export default function fetchingCredit({navigation}) {
           <View
             style={{
               position: 'absolute',
-              top: normalize(10.5),
+              top: normalize(9),
               height: normalize(150),
               width: normalize(150),
               borderRadius: 1000,
@@ -63,13 +63,11 @@ export default function fetchingCredit({navigation}) {
               justifyContent: 'center',
               alignItems: 'center',
               overflow: 'hidden',
-              left: normalize(10),
+              left: normalize(9),
             }}>
             <Animated.Image
               style={{
                 borderRadius: 60,
-                height: normalize(135),
-                width: normalize(135),
               }}
               source={image}
             />

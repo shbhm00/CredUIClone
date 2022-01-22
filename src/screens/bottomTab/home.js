@@ -1,9 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Image, ScrollView, Text} from 'react-native';
 import {vh, vw, normalize} from '../../dimension/dimension';
+import {useSelector} from 'react-redux';
 import Shadow from '../../components/neomorphic/shadow';
 import Button from '../../components/profileButtons';
 export default function home() {
+  const Selector = useSelector(state => state);
+  console.log(Selector);
   return (
     <ScrollView style={styles.container}>
       <View
@@ -38,7 +41,9 @@ export default function home() {
       </View>
       <Image source={require('../../assets/onboardingIcons/Divider.png')} />
       <View style={styles.heading}>
-        <Text style={styles.greetingText}>hello,Shubham</Text>
+        <Text style={styles.greetingText}>
+          hello,{Selector.authReducer.name}
+        </Text>
         <Text style={styles.para}>
           here are today's recommended actions for you
         </Text>

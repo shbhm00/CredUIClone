@@ -8,6 +8,9 @@ import SplashScreen from '../src/screens/splashScreen';
 import Credit from '../src/screens/fetchingCredit';
 import CreditScore from '../src/screens/creditscore';
 import BottomTab from './bottomTab';
+import Name from './screens/enterName';
+import Email from './screens/enterEmail';
+import PanCard from './screens/enterPanCard';
 const Stack = createNativeStackNavigator();
 
 function Route() {
@@ -42,6 +45,21 @@ function Route() {
         <Stack.Screen
           name="CreditScore"
           component={CreditScore}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Name"
+          component={Name}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Email"
+          component={Email}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="PanCard"
+          component={PanCard}
           options={{headerShown: false}}
         />
         <Stack.Screen

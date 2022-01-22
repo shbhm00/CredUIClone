@@ -14,13 +14,14 @@ export const PhoneNumber = payload => {
     });
   };
 };
-// export const action = () => {
-//   return dispatch => {
-//     dispatch({
-//       type: Login1,
-//     });
-//   };
-// };
+export const UserName = payload => {
+  return dispatch => {
+    dispatch({
+      type: 'name',
+      payload: payload,
+    });
+  };
+};
 
 // export const fetchData = data => {
 //   return dispatch => {
