@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     fontWeight: '600',
     color: '#e7e8ea',
+    textTransform: 'capitalize',
   },
   para: {
     fontSize: normalize(16),
