@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image} from 'react-native';
 import HomeScreen from './screens/bottomTab/home';
@@ -8,7 +8,7 @@ import Club from './screens/bottomTab/club';
 import Modal from './screens/bottomTab/modal';
 const Tab = createBottomTabNavigator();
 
-export default function BottomTab() {
+export default function BottomTab({navigation: setParams}) {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -53,7 +53,6 @@ export default function BottomTab() {
       <Tab.Screen
         name="Modal"
         component={Modal}
-        // screenOptions={{presentation: 'modal'}}
         options={{
           tabBarShowLabel: false,
           headerShown: false,
