@@ -50,7 +50,7 @@ export default function BottomTab({navigation: setParams}) {
             ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Modal"
         component={Modal}
         options={{
@@ -69,7 +69,7 @@ export default function BottomTab({navigation: setParams}) {
               />
             ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name="money"
         component={Money}

@@ -45,7 +45,7 @@ export default function home() {
           hello,{Selector.authReducer.name}
         </Text>
         <Text style={styles.para}>
-          here are today's recommended actions for you
+          here are today's{'\n'}recommended actions for you
         </Text>
       </View>
     </ScrollView>
@@ -71,18 +71,17 @@ const styles = StyleSheet.create({
     paddingLeft: vw(24),
   },
   greetingText: {
-    fontSize: normalize(22),
+    fontSize: normalize(20),
     letterSpacing: 1,
     fontWeight: '600',
     color: '#e7e8ea',
     textTransform: 'capitalize',
   },
   para: {
-    fontSize: normalize(16),
-    width: '70%',
+    fontSize: normalize(15),
     fontWeight: '600',
     color: '#7a7e81',
-    letterSpacing: 0.5,
+    letterSpacing: 1,
     paddingTop: normalize(10),
   },
 });
