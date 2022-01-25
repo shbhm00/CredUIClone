@@ -1,9 +1,18 @@
 import React from 'react';
-import {View, StyleSheet, Image, ScrollView, Text} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  ScrollView,
+  Text,
+  Dimensions,
+} from 'react-native';
 import {vh, vw, normalize} from '../../dimension/dimension';
 import {useSelector} from 'react-redux';
-import Shadow from '../../components/neomorphic/shadow';
 import Button from '../../components/profileButtons';
+import Card from '../../components/card';
+const ScreenWidth = Dimensions.get('window').width;
+const ScreenHeight = Dimensions.get('window').height;
 export default function home() {
   const Selector = useSelector(state => state);
   console.log(Selector);
@@ -47,6 +56,13 @@ export default function home() {
         <Text style={styles.para}>
           here are today's{'\n'}recommended actions for you
         </Text>
+      </View>
+      <View style={{paddingLeft: vw(20), paddingTop: vh(30)}}>
+        <Card
+          color="#e1224d"
+          height={ScreenHeight - vh(210)}
+          width={ScreenWidth - vw(40)}
+        />
       </View>
     </ScrollView>
   );
