@@ -64,6 +64,10 @@ export default function home() {
           width={normalize(data[0].width)}
           innerHeight={normalize(data[0].innerHeight)}
           innerWidth={normalize(data[0].innerWidth)}
+          title={data[0].title}
+          textColor={data[0].textColor}
+          textAlign="center"
+          alignItems="center"
         />
         <Card
           color={data[1].color}
@@ -128,6 +132,7 @@ const data = [
     innerWidth: 340,
     buttonText: 'Win now',
     color: '#e1224d',
+    textColor: '#fff7f1',
   },
   {
     title: 'we are gifting you \n ',
