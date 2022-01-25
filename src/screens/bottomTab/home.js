@@ -65,9 +65,13 @@ export default function home() {
           innerHeight={normalize(data[0].innerHeight)}
           innerWidth={normalize(data[0].innerWidth)}
           title={data[0].title}
+          para={data[0].para}
           textColor={data[0].textColor}
+          paraColor="#f6d4dd"
           textAlign="center"
           alignItems="center"
+          paraAlign="center"
+          justifyContent="center"
         />
         <Card
           color={data[1].color}
@@ -75,6 +79,14 @@ export default function home() {
           width={normalize(data[1].width)}
           innerHeight={normalize(data[1].innerHeight)}
           innerWidth={normalize(data[1].innerWidth)}
+          title={data[1].title}
+          para={data[1].para}
+          textColor={data[1].textColor}
+          paraColor="#f6d4dd"
+          textAlign="center"
+          alignItems="center"
+          paraAlign="center"
+          justifyContent="center"
         />
         <Card
           color={data[2].color}
@@ -82,6 +94,15 @@ export default function home() {
           width={normalize(data[2].width)}
           innerHeight={normalize(data[2].innerHeight)}
           innerWidth={normalize(data[2].innerWidth)}
+          title={data[2].title}
+          para={data[2].para}
+          textColor={data[2].textColor}
+          paraColor="#f6d4dd"
+          textAlign="center"
+          alignItems="center"
+          paraAlign="center"
+          justifyContent="center"
+          paraColor={data[2].paraColor}
         />
       </View>
     </ScrollView>
@@ -126,32 +147,35 @@ const data = [
   {
     title: '$750 cashback is waiting for you',
     para: 'earn a cashback of $750 when your reffered friend makes a payment on cred',
-    height: 600,
+    height: 400,
     width: 350,
-    innerHeight: 390,
+    innerHeight: 255,
     innerWidth: 340,
     buttonText: 'Win now',
     color: '#e1224d',
     textColor: '#fff7f1',
   },
   {
-    title: 'we are gifting you \n ',
-    para: 'earn a cashback of $750 when your reffered friend makes a payment on cred',
+    title: 'more benefits than your landlord promised ',
+    para: 'ease up your cash-flow by paying rent with your credit card',
     height: 370,
     width: 350,
     innerHeight: 235,
     innerWidth: 340,
     buttonText: 'Win now',
     color: '#8d49c4',
+    textColor: '#fff7f1',
   },
   {
-    title: 'we are gifting you \n ',
-    para: 'earn a cashback of $750 when your reffered friend makes a payment on cred',
+    title: 'all your card offers. in one place',
+    para: 'claim all offers from top brands on your credit card',
     height: 370,
     width: 350,
     innerHeight: 235,
     innerWidth: 340,
     buttonText: 'Win now',
     color: '#e2e7e3',
+    textColor: 'black',
+    paraColor: '#8f9490',
   },
 ];

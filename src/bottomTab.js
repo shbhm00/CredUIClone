@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Image} from 'react-native';
+import {Image, View} from 'react-native';
 import HomeScreen from './screens/bottomTab/home';
 import Cards from './screens/bottomTab/card';
 import Money from './screens/bottomTab/money';
@@ -50,26 +50,29 @@ export default function BottomTab({navigation: setParams}) {
             ),
         }}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Modal"
         component={Modal}
         options={{
           tabBarShowLabel: false,
           headerShown: false,
-          tabBarIcon: ({focused, size}) =>
-            focused ? (
-              <Image
-                source={require('./assets/bottomtabIcons/modal-icons/active_modal.png')}
-                style={{height: 80, width: 80}}
-              />
-            ) : (
-              <Image
-                source={require('./assets/bottomtabIcons/modal-icons/inactive_modal.png')}
-                style={{height: 80, width: 80}}
-              />
-            ),
+          tabBarIcon: ({focused, size}) => (
+            <View style={{position: 'absolute', top: -35}}>
+              {focused ? (
+                <Image
+                  source={require('./assets/bottomtabIcons/modal-icons/active_modal.png')}
+                  style={{height: 100, width: 100}}
+                />
+              ) : (
+                <Image
+                  source={require('./assets/bottomtabIcons/modal-icons/inactive_modal.png')}
+                  style={{height: 100, width: 100}}
+                />
+              )}
+            </View>
+          ),
         }}
-      /> */}
+      />
       <Tab.Screen
         name="money"
         component={Money}

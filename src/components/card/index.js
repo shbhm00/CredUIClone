@@ -13,6 +13,10 @@ export default function index({
   textColor,
   textAlign,
   alignItems,
+  para,
+  paraColor,
+  paraAlign,
+  justifyContent,
 }) {
   return (
     <View style={{paddingTop: 20}}>
@@ -32,11 +36,15 @@ export default function index({
               height: innerHeight,
               width: innerWidth,
               alignItems: alignItems,
+              justifyContent: justifyContent,
             },
           ]}>
           <Text
             style={[styles.title, {color: textColor, textAlign: textAlign}]}>
             {title}
+          </Text>
+          <Text style={[styles.para, {color: paraColor, textAlign: paraAlign}]}>
+            {para}
           </Text>
         </View>
       </InnerShadow>
@@ -57,5 +65,11 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     width: '80%',
     textAlign: 'center',
+    paddingBottom: vh(15),
+  },
+  para: {
+    fontSize: normalize(15),
+    fontWeight: '600',
+    width: '80%',
   },
 });

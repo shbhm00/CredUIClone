@@ -28,18 +28,6 @@ export default function creditscore({navigation}) {
   console.log('numbereee', percentageScore);
   return (
     <SafeAreaView style={styles.container}>
-      {/* <TouchableOpacity
-        onPress={() => navigation.goBack()}
-        style={{left: vw(24), paddingBottom: vh(30)}}>
-        <Shadow
-          height={45}
-          width={45}
-          style={styles.shadow}
-          topColor={'#15181b'}
-          bottomColor={'#293033'}>
-          <Image source={require('../assets/onboardingIcons/leftArrow.png')} />
-        </Shadow>
-      </TouchableOpacity> */}
       <View styles={styles.textContainer}>
         <Text
           style={{
