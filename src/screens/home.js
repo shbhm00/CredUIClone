@@ -72,7 +72,6 @@ export default function home({navigation}) {
               />
             </View>
           </View>
-          {/* <Image source={require('../assets/onboardingIcons/onboarding.png')} /> */}
         </View>
         <View
           style={{
