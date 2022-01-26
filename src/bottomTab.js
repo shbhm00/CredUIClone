@@ -8,7 +8,7 @@ import Club from './screens/bottomTab/club';
 import Modal from './screens/bottomTab/modal';
 const Tab = createBottomTabNavigator();
 
-export default function BottomTab({navigation: setParams}) {
+export default function BottomTab() {
   return (
     <Tab.Navigator
       screenOptions={{

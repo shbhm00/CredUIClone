@@ -15,13 +15,16 @@ import Shadow from '../components/neomorphic/shadow';
 import {vh, vw, normalize} from '../dimension/dimension';
 export default function Name({navigation, route}) {
   const [buttonEnable, setButtonEnable] = useState(true);
+  const [alert, setAlert] = useState('');
   const onChangeText = text => {
-    if (text.length == 1) {
+    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (reg.test(text) === true) {
       setButtonEnable(false);
+    } else {
+      setAlert('enter valid email.');
     }
   };
   const counter = useSelector(state => state);
-  //   console.log('counter', counter.authReducer.userDetails);
   return (
     <SafeAreaView
       style={{
@@ -48,9 +51,10 @@ export default function Name({navigation, route}) {
             placeholderTextColor="#343739"
             style={styles.textInput}
             autoFocus
-            autoCapitalize="characters"
+            // autoCapitalize="characters"
             onChangeText={text => onChangeText(text)}
           />
+          <Text>{}</Text>
         </View>
         <View>
           <TouchableOpacity

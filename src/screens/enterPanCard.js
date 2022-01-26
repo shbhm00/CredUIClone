@@ -16,7 +16,8 @@ import {vh, vw, normalize} from '../dimension/dimension';
 export default function Name({navigation, route}) {
   const [buttonEnable, setButtonEnable] = useState(true);
   const onChangeText = text => {
-    if (text.length == 1) {
+    var panPat = /[a-zA-Z]{3}[PCHFATBLJG]{1}[a-zA-Z]{1}[0-9]{4}[a-zA-Z]{1}$/;
+    if ((text.length === 10) & panPat.test(text)) {
       setButtonEnable(false);
     }
   };
