@@ -7,6 +7,7 @@ import MaxScreens from './screens/max';
 import BenefitScreen from './screens/benefits';
 import ManageScreen from './screens/manage';
 import Divider from '../../components/divider';
+import {vh, vw, normalize} from '../../dimension/dimension';
 const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
@@ -17,8 +18,8 @@ function MyTabs() {
         tabBarActiveTintColor: 'white',
         tabBarIndicatorStyle: {backgroundColor: 'transparent'},
         tabBarLabelStyle: {
-          width: 100,
-          fontSize: 14,
+          width: vw(100),
+          fontSize: normalize(14),
           fontWeight: '700',
           letterSpacing: 0.5,
           textTransform: 'lowercase',
@@ -26,8 +27,8 @@ function MyTabs() {
         },
         tabBarStyle: {
           backgroundColor: '#1f2427',
-          marginRight: 80,
-          marginLeft: 20,
+          marginRight: vw(80),
+          marginLeft: vw(20),
         },
       }}>
       <Tab.Screen
@@ -56,8 +57,8 @@ function MyTabs() {
 export default function TopTab() {
   return (
     <View style={{flex: 1}}>
+      <Divider />
       <MyTabs />
-      {/* <Divider /> */}
     </View>
   );
 }

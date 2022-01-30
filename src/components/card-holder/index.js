@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Image, Text} from 'react-native';
-
+import {vh, vw, normalize} from '../../dimension/dimension';
 export default function index({
   BankName,
   BankLogo,
@@ -15,14 +15,14 @@ export default function index({
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          marginTop: 24,
+          marginTop: normalize(24),
         }}>
         <Text style={styles.textStyle}>{BankName}</Text>
         <Image source={BankLogo} style={{marginRight: 27}} />
       </View>
       <View
         style={{
-          marginTop: 90,
+          marginTop: vh(90),
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -41,16 +41,16 @@ export default function index({
 }
 const styles = StyleSheet.create({
   container: {
-    height: 220,
-    width: 350,
-    borderRadius: 12,
-    marginVertical: 20,
+    height: vh(220),
+    width: vw(350),
+    borderRadius: normalize(12),
+    marginVertical: vh(20),
   },
   textStyle: {
     color: '#ECEDEF',
-    fontSize: 16,
-    lineHeight: 22,
+    fontSize: normalize(16),
+    lineHeight: vh(22),
     fontWeight: '700',
-    marginLeft: 24,
+    marginLeft: vw(24),
   },
 });
