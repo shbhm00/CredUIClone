@@ -18,7 +18,7 @@ function MyTabs() {
         tabBarIndicatorStyle: {backgroundColor: 'transparent'},
         tabBarLabelStyle: {
           width: 100,
-          fontSize: 13,
+          fontSize: 14,
           fontWeight: '700',
           letterSpacing: 0.5,
           textTransform: 'lowercase',
@@ -26,7 +26,7 @@ function MyTabs() {
         },
         tabBarStyle: {
           backgroundColor: '#1f2427',
-          marginRight: 70,
+          marginRight: 80,
           marginLeft: 20,
         },
       }}>
