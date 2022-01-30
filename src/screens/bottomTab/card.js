@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView} from 'react-native';
+import {StyleSheet, SafeAreaView, Image, View} from 'react-native';
 import TopTab from '../topBar/index';
 export default function cards() {
   return (

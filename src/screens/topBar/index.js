@@ -2,37 +2,11 @@ import * as React from 'react';
 import {Text, View} from 'react-native';
 // import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-
-function FeedScreen() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#1f2427',
-      }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
-
-function NotificationsScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
-
-function ProfileScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Profile!</Text>
-    </View>
-  );
-}
-
+import MyCard from './screens/mycards';
+import MaxScreens from './screens/max';
+import BenefitScreen from './screens/benefits';
+import ManageScreen from './screens/manage';
+import Divider from '../../components/divider';
 const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
@@ -58,27 +32,32 @@ function MyTabs() {
       }}>
       <Tab.Screen
         name="my cards"
-        component={FeedScreen}
+        component={MyCard}
         options={{tabBarLabel: 'my cards'}}
       />
       <Tab.Screen
         name="max"
-        component={NotificationsScreen}
+        component={MaxScreens}
         options={{tabBarLabel: 'max'}}
       />
       <Tab.Screen
         name="benefits"
-        component={ProfileScreen}
+        component={BenefitScreen}
         options={{tabBarLabel: 'benefits'}}
       />
       <Tab.Screen
         name="manage"
-        component={ProfileScreen}
+        component={ManageScreen}
         options={{tabBarLabel: 'manage'}}
       />
     </Tab.Navigator>
   );
 }
-export default function App() {
-  return <MyTabs />;
+export default function TopTab() {
+  return (
+    <View style={{flex: 1}}>
+      <MyTabs />
+      {/* <Divider /> */}
+    </View>
+  );
 }
