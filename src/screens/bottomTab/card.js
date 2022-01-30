@@ -1,18 +1,18 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-
+import {StyleSheet, SafeAreaView} from 'react-native';
+import TopTab from '../topBar/index';
 export default function cards() {
   return (
-    <View style={styles.container}>
-      <Text>Card</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <TopTab />
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     backgroundColor: '#1f2427',
   },
 });

@@ -16,8 +16,8 @@ const Stack = createNativeStackNavigator();
 function Route() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen">
-        <Stack.Screen
+      <Stack.Navigator initialRouteName="BottomTab">
+        {/* <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
           options={{headerShown: false}}
@@ -61,7 +61,7 @@ function Route() {
           name="PanCard"
           component={PanCard}
           options={{headerShown: false}}
-        />
+        /> */}
         <Stack.Screen
           name="BottomTab"
           component={BottomTab}
